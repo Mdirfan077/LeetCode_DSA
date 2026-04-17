@@ -15,7 +15,7 @@ class Solution {
             return head;
         }
 
-        // Step 1: Find middle
+        // Find middle
         ListNode slow = head;
         ListNode fast = head.next;
 
@@ -24,19 +24,18 @@ class Solution {
             fast = fast.next.next;
         }
 
-        // Split list into two halves
+        // Split list
         ListNode mid = slow.next;
         slow.next = null;
 
-        // Step 2: Recursively sort both halves
+        // Recursively sort both halves
         ListNode left = sortList(head);
         ListNode right = sortList(mid);
 
-        // Step 3: Merge sorted halves
+        // Merge sorted halves
         return merge(left, right);
     }
 
-    // Merge two sorted linked lists
     private ListNode merge(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode temp = dummy;
