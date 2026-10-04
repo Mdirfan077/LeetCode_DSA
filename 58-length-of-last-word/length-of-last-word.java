@@ -7,11 +7,14 @@ class Solution {
             i--;
         }
 
+        // if(s.charAt(i)==' '){
+        //     i--;
+        //     i--;
+        // }
         while(i>=0 && s.charAt(i)!=' '){
             count++;
             i--;
         }
-
         return count;
     }
 }
